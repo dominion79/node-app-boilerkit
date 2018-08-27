@@ -84,11 +84,11 @@ module.exports = function createApp({ logger, someService }) { // eslint-disable
       debug: true,
       outputStyle: 'compressed',
       prefix: '/stylesheets/',
-      includePaths: [
-        'node_modules/govuk_frontend_toolkit/stylesheets',
-        'node_modules/govuk_template_jinja/assets/stylesheets',
-        'node_modules/govuk-elements-sass/public/sass',
-      ],
+      // includePaths: [
+      //   'node_modules/path-to-assets',
+      //   'node_modules/path-to-assets',
+      //   'node_modules/path-to-assets',
+      // ],
     }));
   }
 
@@ -99,17 +99,17 @@ module.exports = function createApp({ logger, someService }) { // eslint-disable
     '../public',
     '../assets',
     '../assets/stylesheets',
-    '../node_modules/govuk_template_jinja/assets',
-    '../node_modules/govuk_frontend_toolkit',
+    // '../node_modules/path-to-assets',
+    // '../node_modules/path-to-assets',
   ].forEach((dir) => {
     app.use('/public', express.static(path.join(__dirname, dir), cacheControl));
   });
 
-  [
-    '../node_modules/govuk_frontend_toolkit/images',
-  ].forEach((dir) => {
-    app.use('/public/images/icons', express.static(path.join(__dirname, dir), cacheControl));
-  });
+  // [
+  //   '../node_modules/node_modules/path-to-assets/images',
+  // ].forEach((dir) => {
+  //   app.use('/public/images/icons', express.static(path.join(__dirname, dir), cacheControl));
+  // });
 
   // GovUK Template Configuration
   app.locals.asset_path = '/public/';
