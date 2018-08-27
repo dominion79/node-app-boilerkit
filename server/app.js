@@ -9,6 +9,7 @@ const cookieSession = require('cookie-session');
 const createIndexRouter = require('./routes/index');
 const sassMiddleware = require('node-sass-middleware');
 const moment = require('moment');
+const nunjucks = require('nunjucks');
 const path = require('path');
 const log = require('bunyan-request-logger')();
 const logger = require('../log.js');
@@ -31,6 +32,10 @@ module.exports = function createApp({ logger, someService }) { // eslint-disable
   // View Engine Configuration
   app.set('views', path.join(__dirname, '../server/views'));
   app.set('view engine', 'html');
+  nunjucks.configure('server/views', {
+    express: app,
+    autoescape: true,
+  });
 
   // Server Configuration
   app.set('port', process.env.PORT || 3000);
