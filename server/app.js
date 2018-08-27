@@ -30,7 +30,7 @@ module.exports = function createApp({ logger, someService }) { // eslint-disable
 
   // View Engine Configuration
   app.set('views', path.join(__dirname, '../server/views'));
-  app.set('view engine', 'ejs');
+  app.set('view engine', 'html');
 
   // Server Configuration
   app.set('port', process.env.PORT || 3000);
