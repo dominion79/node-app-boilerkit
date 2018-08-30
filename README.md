@@ -1,4 +1,4 @@
-# GOVUK startkit
+# Node App startkit
 
 A simple starter kit to start writing node app.
 

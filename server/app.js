@@ -116,7 +116,6 @@ module.exports = function createApp({ logger, someService }) { // eslint-disable
   //   app.use('/public/images/icons', express.static(path.join(__dirname, dir), cacheControl));
   // });
 
-  // GovUK Template Configuration
   app.locals.asset_path = '/public/';
 
   function addTemplateVariables(req, res, next) {
