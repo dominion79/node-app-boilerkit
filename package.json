@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node server.js",
-    "start:dev": "yarn build && DEBUG=node-app-starter-server* nodemon server.js | bunyan -o short",
-    "build": "yarn run css-build",
+    "start:dev": "npm build && DEBUG=node-app-starter-server* nodemon server.js | bunyan -o short",
+    "build": "npm run css-build",
     "css-build": "./bin/build-css",
     "clean": "rm -rf public/* .port.tmp *.log build/* uploads/* test-results.xml",
     "lint": "eslint . --cache --max-warnings 0",
